@@ -1,4 +1,4 @@
-# NSE Stock Data Fetcher (Java)
+# NSE Stock Data Fetcher (Java & Angular)
 
 A developer-friendly Java library to fetch **real-time quotes** and **historical OHLCV data** from the National Stock Exchange of India (NSE).
 
