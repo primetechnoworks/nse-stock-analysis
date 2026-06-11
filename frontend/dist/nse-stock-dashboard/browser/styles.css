@@ -1,0 +1,195 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap";
+
+/* src/styles.css */
+:root {
+  --bg-base: #080c1e;
+  --bg-surface: #0d1230;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --bg-glass: rgba(13, 18, 48, 0.7);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(0, 255, 163, 0.35);
+  --accent: #00ffa3;
+  --accent-dim: rgba(0, 255, 163, 0.15);
+  --gain: #00e676;
+  --gain-bg: rgba(0, 230, 118, 0.12);
+  --loss: #ff5252;
+  --loss-bg: rgba(255, 82, 82, 0.12);
+  --neutral: #90a0b7;
+  --info: #448aff;
+  --text-primary: #e8edf5;
+  --text-secondary: #8896a8;
+  --text-muted: #566474;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 8px 40px rgba(0, 255, 163, 0.12);
+  --shadow-popup: 0 16px 64px rgba(0, 0, 0, 0.6);
+  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(
+      ellipse 60% 40% at 20% 0%,
+      rgba(0, 255, 163, 0.06) 0%,
+      transparent 60%),
+    radial-gradient(
+      ellipse 40% 30% at 80% 100%,
+      rgba(68, 138, 255, 0.06) 0%,
+      transparent 60%);
+  background-attachment: fixed;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+.card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+.gain {
+  color: var(--gain);
+}
+.loss {
+  color: var(--loss);
+}
+.muted {
+  color: var(--text-muted);
+}
+.badge-gain {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--gain-bg);
+  color: var(--gain);
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.badge-loss {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--loss-bg);
+  color: var(--loss);
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+}
+.spinner::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 60px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+.error-state .icon {
+  font-size: 2.5rem;
+}
+.error-state p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.page {
+  padding: 32px 0;
+  min-height: calc(100vh - 64px);
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+  .page {
+    padding: 20px 0;
+  }
+}
+
+/* angular:styles/global:styles */
+/*# sourceMappingURL=styles.css.map */
